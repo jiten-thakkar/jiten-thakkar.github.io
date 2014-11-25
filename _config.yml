@@ -4,7 +4,6 @@ relative_permalinks: true
 
 # Setup
 title:            Jiten Thakkar
-tagline:          'Mozilla, GSoC, Cool Stuff'
 url:              http://getpoole.com
 paginate:         1
 baseurl:          http://jiten-thakkar.github.io/
