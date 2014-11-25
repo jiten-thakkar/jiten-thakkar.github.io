@@ -1,2 +1,2 @@
-jiten.github.io
+jiten-thakkar.github.io
 ===============
