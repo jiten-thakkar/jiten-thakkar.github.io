@@ -3,17 +3,17 @@ permalink:        pretty
 relative_permalinks: true
 
 # Setup
-title:            Poole
-tagline:          The Jekyll Butler
+title:            Jiten Thakkar
+tagline:          Mozilla, GSoC, Cool Stuff
 url:              http://getpoole.com
 paginate:         1
-baseurl:          http://jiten-thakkar.github.io/index.html/
+baseurl:          http://jiten-thakkar.github.io/
 author:
-  name:           Mark Otto
-  url:            https://twitter.com/mdo
-  email:          markdotto@gmail.com
+  name:           Jiten Thakkar
+  url:            https://twitter.com/jiten_mt
+  email:          jitenmt@gmail.com
 
 # Custom vars
 version:          1.0.0
 github:
-  repo:           https://github.com/poole/poole
+  repo:           https://github.com/jiten-thakkar/jiten-thakkar.github.io
