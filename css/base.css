@@ -7,6 +7,9 @@ body {
 a {
   color: #227ce8; }
 
+figure figcaption {
+    text-align: center;
+}
 .sidebar {
   position: fixed;
   left: 15px;
