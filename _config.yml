@@ -1,5 +1,5 @@
 # Permalinks
-markdown: rdiscount
+#markdown: rdiscount
 permalink: /posts/:title
 rdiscount:
   extensions: [smart]
