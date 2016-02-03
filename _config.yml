@@ -1,7 +1,6 @@
 # Permalinks
 markdown: rdiscount
 permalink: /posts/:title
-relative_permalinks: true
 rdiscount:
   extensions: [smart]
 
