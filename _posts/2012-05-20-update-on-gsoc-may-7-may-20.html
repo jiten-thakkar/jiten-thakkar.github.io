@@ -10,6 +10,7 @@ tags:
 modified_time: '2012-05-20T05:33:01.938-07:00'
 blogger_id: tag:blogger.com,1999:blog-4257776574536372826.post-3495747841567061725
 blogger_orig_url: http://netij.blogspot.com/2012/05/update-on-gsoc-may-7-may-20.html
+comments: True
 ---
 
 <div dir="ltr" style="text-align: left;" trbidi="on">Though the coding period starts from 21st May, I have started working on new IDL as part of my project.<div>I started working from 7th May. My first try is to get Http connection data like- hostname, port, No. of active connections, No. of idle connections. In first week I was getting my head around how to create a new idl, xpcom module, etc. Later on I came to know that I don't have to create new module, I can add new idl to Network module. So, now I have created my new idl and implemented it in c++. Only thing lest is to test it and see if I am getting Http connection data in a javascript or not. But it's not that easy. It seams that firefox doesn't allow use of&nbsp;UniversalXPConnect in a normal javascript. So now I have two options, either use jsctypes(which will take me time to understand) or create an add on to access the idl. I am going with the latter. Right now I am facing some difficulties in developing new add on with a nightly build but I will get over it.</div></div>
