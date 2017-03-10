@@ -1,13 +1,9 @@
 ---
-layout: layout
 title: About
+layout: layout
 ---
 
 <section class="content">
   <h1>{{ site.name }}</h1>
-  <figure>
-	  <img src="/assets/737205_565156080164536_1925247615_o(1).jpg" alt="Me at MozFest 2012 Singapore" width="500" height="700">
-	  <figcaption>Me at MozFest 2012 Singapore</figcaption>
-  </figure>
-  <p>I am a Computer Science graduate student at the University of Utah. If you like my website, you can follow me on <a href="https://twitter.com/jiten_mt" target="_blank">twitter</a></p>
+  <p>I am a Computer Science graduate student at the University of Utah. I work in <a href="http://soarlab.org/" target="_blank">Soarlab</a> under Prof. Zvonimir Rakamaric.</p>
 </section>
