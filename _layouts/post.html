@@ -9,6 +9,7 @@ layout: layout
   <span class="post-date">{{ page.date | date_to_string }}</span>
 <p>
   {{ content }}
+  <ul class="tag_list_in_post"><b>Tags:</b> {% for tag in page.tags %}{{tag}}  {% endfor %}</ul>
 
   {% include comments.html %}
 </p>

@@ -7,7 +7,6 @@ tags:
 - C
 - generic
 - stack
-- generic stack
 - pointers
 - malloc
 - realloc

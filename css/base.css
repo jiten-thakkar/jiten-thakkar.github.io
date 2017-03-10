@@ -10,6 +10,11 @@ a {
 figure figcaption {
     text-align: center;
 }
+
+.tag_list_in_post {
+  border:1px solid #C9C6C3;border-width:1px 0;font-size:12px;line-height:20px;margin:0 0 20px;padding:1px 0;text-transform:uppercase;
+}
+
 .sidebar {
   position: fixed;
   left: 15px;
