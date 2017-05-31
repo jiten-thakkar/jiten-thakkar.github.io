@@ -15,6 +15,7 @@ This is a small post to demonstrate working code for writng and reading metadata
 Metadata information can be used to insert any kind of data related to code without any side-effects. It can be anything from debug information to any statistical data to some useless rant about how your day job sucks. For more information about them refer to the blog post in the link above.  Now let's see some code. All of these examples are written with LLVM-3.8. 
 
 **Inserting Metadata**
+
 Let's write a function pass that inserts total number of instructions as integer to metadata of the function and order number of instruction in the function to the instruction metadata as a string (just to demonstrate how to insert string as metadata). 
 
 ```
