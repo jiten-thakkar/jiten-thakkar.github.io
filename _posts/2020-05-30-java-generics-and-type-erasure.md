@@ -15,26 +15,26 @@ tags:
 comments: true
 ---
 
-Strongly typed programming languages like Java, C++, C#, etc has great benefits because of its typed nature. Forcing the users define the type of an entity upfront allows the programming language to provide type safety guarantees. Strong type has its own benefits and a whole blog post can be written on it but some of the most important benefits are early type error detection, compile time optimization, documentation etc. But this advantage can also be constraining in writing generic, type agnostic, reusable code if not supported correctly. That is exactly why these languages usually allow writing generically typed entities. For example, in Java it's called generics, in C++ it's called templates and parametric polymorphism in Haskell and so on. This style of programming is called [Generic Programming]((https://en.wikipedia.org/wiki/Generic_programming). In this style of programming, programs are written with types that are to be defined later by providing type as parameter when initiated. Every language has it's own way of implementing and supporting generic type. In this blog post we are going to have a look at how Java does it under the hood. 
+Strongly typed programming languages like Java, C++, C#, etc. has great benefits because of its typed nature. Forcing the users to define the type of entity upfront allows the programming language to provide type safety guarantees. Strong typing has its own advantages, and a whole blog post can be written on it. Some of the essential gains are early-type error detection, compile-time optimization, documentation, etc. But this advantage can also be constraining in writing generic, type agnostic, reusable code if not supported correctly. That is precisely why these languages usually allow writing generically typed entities. For example, in Java it's called generics, in C++ it's called templates and parametric polymorphism in Haskell and so on. This style of programming is called [Generic Programming](https://en.wikipedia.org/wiki/Generic_programming). In this style of programming, programs are written with types that are to be defined later by providing type as a parameter when initiated. Every language has it's own way of implementing and supporting generic types. In this blog post, we will look at how Java does it under the hood. 
 
-During compilation Java compiler replaces erasure type with type ***Object*** if the generic type is unbounded. For example:
+During compilation, Java compiler replaces erasure type with type ***Object*** if the generic type is unbounded. For example:
 
 ```java
 public class Test<T> {
 
-	private final T a;
+    private final T a;
 
-	public Test(T a) {
+    public Test(T a) {
 
-		this.a = a;
+        this.a = a;
 
-	}
+    }
 
-	public T getA() {
+    public T getA() {
 
-		return a;
+        return a;
 
-	}
+    }
 
 }
 ```
@@ -46,21 +46,21 @@ public class Test {
 
  private final Object a;
 
-	public Test(Object a) {
+    public Test(Object a) {
 
-		this.a = a;
+        this.a = a;
 
-	}
+    }
 
-	public Object getA() {
+    public Object getA() {
 
-		return a;
+        return a;
 
-	}
+    }
 }
 ```
 
-This is called type erasure.  After compilation JVM has no knowledge of the type of the generic type. That's why you might see some type mismatch errors while dealing with generic type classes. Take this as an example:
+This is called type erasure.  After compilation, JVM has no knowledge about the actual type of the generic type. That's why you might see some type mismatch errors while dealing with generic type classes. Take this as an example:
 
 ```java
 public class Test<T> {
@@ -97,7 +97,7 @@ public class Main {
 }
 ```
 
-In the code above you will get a type mismatch error because the compiler thinks type of field ***a*** inside ***Test*** class is ***Object*** as a result of type erasure. The way to fix this is by typecasting ***t.getA()*** with *Integer*. So the code becomes this
+In the code above, we get a type mismatch error because the compiler thinks the type of field ***a*** inside ***Test*** class is ***Object*** as a result of type erasure. The way to fix this is by typecasting ***t.getA()*** with *Integer*. So the code becomes this
 
 ```java
 public class Main {
@@ -140,7 +140,7 @@ public class MyTest extends Test {
 }
 ```
 
-As you can see, class ***myTest*** is no longer overriding the ***setA*** method that it intended to. In order to maintain the polymorphism of the generic types, compiler introduces something called a **[Bridge Method](https://docs.oracle.com/javase/tutorial/java/generics/bridgeMethods.html)**.  It works like this:
+As you can see, class ***myTest*** is no longer overriding the ***setA*** method that it intended to. To maintain the polymorphism of the generic types, the compiler introduces something called a **[Bridge Method](https://docs.oracle.com/javase/tutorial/java/generics/bridgeMethods.html)**.  It works like this:
 
 ```java
 public class Test {
@@ -163,10 +163,10 @@ public class MyTest extends Test {
         super(a);
     }
 
-		**// Bridge method generated by the compiler
-		public void setA(Object a) {
-			setA((Integer)a);
-		}**
+        **// Bridge method generated by the compiler
+        public void setA(Object a) {
+            setA((Integer)a);
+        }**
 
     public void setA(Integer a) {
         super.setA(a);
@@ -174,7 +174,7 @@ public class MyTest extends Test {
 }
 ```
 
-You can verify the existence of this bridge method by printing type of parameters using java reflection.
+You can verify the existence of this bridge method by printing the type of parameters using java reflection.
 
 Here is the code:
 
@@ -226,6 +226,6 @@ This method has parameters whose types are:
 java.lang.Object
 ```
 
-This is how Java handles generic types under the hood. There are some other restrictions on Java generics that you can learn more about from [here](https://docs.oracle.com/javase/tutorial/java/generics/restrictions.html).
+So that's how Java handles generic types under the hood. There are some other restrictions on Java generics that you can learn more about from [here](https://docs.oracle.com/javase/tutorial/java/generics/restrictions.html).
 
-All the code in this post is available on my [github profile]((https://github.com/jiten-thakkar/TypeErasure).
+All the code in this post is available on my [github profile](https://github.com/jiten-thakkar/TypeErasure).
