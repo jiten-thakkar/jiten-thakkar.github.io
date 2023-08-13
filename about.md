@@ -5,5 +5,5 @@ layout: layout
 
 <section class="content">
   <h1>{{ site.name }}</h1>
-  <p>I am a Software Engineer at VMware working on NSX controller.</p>
+  <p>Software Engineer at AWS using simulation to train robots. I am obsessed about history.</p>
 </section>
