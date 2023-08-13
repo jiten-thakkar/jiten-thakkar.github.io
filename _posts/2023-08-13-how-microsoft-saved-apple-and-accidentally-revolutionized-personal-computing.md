@@ -28,4 +28,4 @@ So, the next time you're using an Apple product, take a moment to thank Microsof
 
 This interesting nugget of history is from book [Becoming Steve Jobs](https://www.goodreads.com/book/show/22318382-becoming-steve-jobs). Good read.
 
-[1] https://en.wikipedia.org/wiki/Apple_Computer,_Inc._v._Microsoft_Corp.
+[1] [https://en.wikipedia.org/wiki/Apple_Computer,_Inc._v._Microsoft_Corp](https://en.wikipedia.org/wiki/Apple_Computer,_Inc._v._Microsoft_Corp)
