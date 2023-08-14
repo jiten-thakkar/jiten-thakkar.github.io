@@ -4,7 +4,7 @@ rdiscount:
   extensions:
   - smart
 title: Jiten Thakkar
-url: http://jiten-thakkar.com
+url: https://jiten-thakkar.com
 baseurl: ""
 paginate: 1
 author:
