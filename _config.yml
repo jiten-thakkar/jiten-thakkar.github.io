@@ -5,6 +5,7 @@ rdiscount:
   - smart
 title: Jiten Thakkar
 url: https://jiten-thakkar.com
+domain: jiten-thakkar.com
 baseurl: ""
 paginate: 1
 author:
