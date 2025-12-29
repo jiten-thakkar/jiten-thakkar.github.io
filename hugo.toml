@@ -62,6 +62,12 @@ theme = 'PaperMod'
   url = "/archives/"
   weight = 20
 
+[[menu.main]]
+  identifier = "gallery"
+  name = "Gallery"
+  url = "/gallery/"
+  weight = 30
+
 # Enable taxonomies
 [taxonomies]
   tag = "tags"
