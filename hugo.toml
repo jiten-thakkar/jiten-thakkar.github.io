@@ -21,10 +21,6 @@ theme = 'PaperMod'
     name = "github"
     url = "https://github.com/jiten-thakkar"
 
-  [[params.socialIcons]]
-    name = "email"
-    url = "mailto:jitenmt@gmail.com"
-
   # PaperMod settings
   ShowReadingTime = true
   ShowShareButtons = false

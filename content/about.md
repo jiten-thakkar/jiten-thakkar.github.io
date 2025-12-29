@@ -7,4 +7,4 @@ summary: "About Jiten Thakkar"
 
 ## Jiten Thakkar
 
-Software Engineer at AWS using simulation to train robots. I am obsessed about history.
+Software Engineer at Google working on ML performance. I am also obsessed about history.
