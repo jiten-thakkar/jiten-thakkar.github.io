@@ -1,5 +1,6 @@
 ---
 title: How Microsoft Saved Apple and Accidentally Revolutionized Personal Computing
+image: /images/blog/microsoft-apple-1997.jpg
 date: '2023-08-13 15:55:35'
 author: Jiten Thakkar
 comments: true

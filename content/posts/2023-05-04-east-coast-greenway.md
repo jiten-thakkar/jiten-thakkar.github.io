@@ -1,5 +1,6 @@
 ---
 title: East Coast Greenway
+image: /images/blog/east-coast-greenway.jpg
 layout: post
 date: '2023-05-04 05:33:53'
 author: Jiten Thakkar

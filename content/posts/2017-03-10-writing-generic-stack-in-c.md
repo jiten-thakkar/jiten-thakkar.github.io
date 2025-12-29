@@ -1,5 +1,6 @@
 ---
 title: Writing Generic stack in C
+image: /images/blog/c-programming-stack.jpg
 date: '2017-03-10 08:20:00'
 author: Jiten Thakkar
 tags:

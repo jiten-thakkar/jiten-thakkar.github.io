@@ -1,5 +1,6 @@
 ---
 title: Java Generics And Type Erasure
+image: /images/blog/java-generics-code.jpg
 date: '2020-05-30 14:30:00'
 author: Jiten Thakkar
 tags:

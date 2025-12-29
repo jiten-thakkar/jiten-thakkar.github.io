@@ -1,5 +1,6 @@
 ---
 title: How to Read and Write Metadata in LLVM
+image: /images/blog/llvm-compiler.jpg
 date: '2017-05-29 19:20:00'
 author: Jiten Thakkar
 tags:
