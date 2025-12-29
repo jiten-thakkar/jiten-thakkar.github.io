@@ -1,5 +1,6 @@
 ---
 title: "About"
+type: page
 layout: "single"
 url: "/about/"
 summary: "About Jiten Thakkar"

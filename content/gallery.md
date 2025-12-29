@@ -1,5 +1,6 @@
 ---
 title: "Photo Gallery"
+type: page
 layout: "single"
 url: "/gallery/"
 summary: "My Photo Collection"

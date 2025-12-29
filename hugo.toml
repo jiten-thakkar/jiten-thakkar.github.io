@@ -1,7 +1,7 @@
 baseURL = 'https://jiten-thakkar.com/'
 languageCode = 'en-us'
 title = 'Jiten Thakkar'
-theme = 'PaperMod'
+theme = 'hugo-theme-stack'
 
 # Disqus
 [services]
@@ -9,78 +9,179 @@ theme = 'PaperMod'
     shortname = 'jitenthakkarcom'
 
 [params]
-  author = 'Jiten Thakkar'
-  description = 'Personal blog of Jiten Thakkar'
+  mainSections = ['posts']
+  featuredImageField = 'image'
+  rssFullContent = true
+  favicon = '/favicon.ico'
 
-  # Social links
-  [[params.socialIcons]]
-    name = "twitter"
-    url = "https://twitter.com/jiten_mt"
+  [params.footer]
+    since = 2012
+    customText = ''
 
-  [[params.socialIcons]]
-    name = "github"
-    url = "https://github.com/jiten-thakkar"
+  [params.dateFormat]
+    published = 'Jan 02, 2006'
+    lastUpdated = 'Jan 02, 2006 15:04 MST'
 
-  # PaperMod settings
-  ShowReadingTime = true
-  ShowShareButtons = false
-  ShowPostNavLinks = true
-  ShowBreadCrumbs = true
-  ShowCodeCopyButtons = true
-  ShowWordCount = false
-  ShowRssButtonInSectionTermList = true
-  UseHugoToc = true
-  disableSpecial1stPost = false
-  disableScrollToTop = false
-  comments = true
-  hidemeta = false
-  hideSummary = false
-  showtoc = false
-  tocopen = false
+  [params.sidebar]
+    emoji = '👋'
+    subtitle = 'Software Engineer at AWS. Obsessed about history.'
 
-  # Home page settings
-  [params.homeInfoParams]
-    Title = "Hi there! I'm Jiten"
-    Content = "Welcome to my blog where I write about technology, programming, and occasional adventures."
+    [params.sidebar.avatar]
+      enabled = true
+      local = false
+      src = ''
 
-  # Cover image settings
-  [params.cover]
-    hidden = false
-    hiddenInList = false
-    hiddenInSingle = false
+  [params.article]
+    math = false
+    toc = true
+    readingTime = true
+
+    [params.article.license]
+      enabled = false
+      default = 'Licensed under CC BY-NC-SA 4.0'
+
+  [params.comments]
+    enabled = true
+    provider = 'disqus'
+
+    [params.comments.disqusjs]
+      shortname = 'jitenthakkarcom'
+      apiUrl = ''
+      apiKey = ''
+      admin = ''
+      adminLabel = ''
+
+  [[params.widgets.homepage]]
+    type = 'search'
+
+  [[params.widgets.homepage]]
+    type = 'archives'
+
+  [[params.widgets.homepage]]
+    type = 'tag-cloud'
+
+  [[params.widgets.page]]
+    type = 'toc'
+
+    [params.widgets.archives]
+      limit = 5
+
+    [params.widgets.tagCloud]
+      limit = 10
+
+  [params.opengraph]
+    [params.opengraph.twitter]
+      site = '@jiten_mt'
+      card = 'summary_large_image'
+
+  [params.defaultImage]
+    [params.defaultImage.opengraph]
+      enabled = false
+      local = false
+      src = ''
+
+  [params.colorScheme]
+    toggle = true
+    default = 'auto'
+
+  [params.imageProcessing]
+    [params.imageProcessing.cover]
+      enabled = true
+    [params.imageProcessing.content]
+      enabled = true
 
 # Menu
-[[menu.main]]
-  identifier = "about"
-  name = "About"
-  url = "/about/"
-  weight = 10
+[menu]
+  [[menu.main]]
+    identifier = 'home'
+    name = 'Home'
+    url = '/'
+    [menu.main.params]
+      icon = 'home'
+      newTab = false
+    weight = 10
 
-[[menu.main]]
-  identifier = "archives"
-  name = "Archives"
-  url = "/archives/"
-  weight = 20
+  [[menu.main]]
+    identifier = 'about'
+    name = 'About'
+    url = '/about/'
+    [menu.main.params]
+      icon = 'user'
+      newTab = false
+    weight = 20
 
-[[menu.main]]
-  identifier = "gallery"
-  name = "Gallery"
-  url = "/gallery/"
-  weight = 30
+  [[menu.main]]
+    identifier = 'archives'
+    name = 'Archives'
+    url = '/archives/'
+    [menu.main.params]
+      icon = 'archives'
+      newTab = false
+    weight = 30
 
-# Enable taxonomies
+  [[menu.main]]
+    identifier = 'gallery'
+    name = 'Gallery'
+    url = '/gallery/'
+    [menu.main.params]
+      icon = 'link'
+      newTab = false
+    weight = 40
+
+  [[menu.main]]
+    identifier = 'search'
+    name = 'Search'
+    url = '/search/'
+    [menu.main.params]
+      icon = 'search'
+      newTab = false
+    weight = 50
+
+# Social links in sidebar
+[[params.sidebar.social]]
+  identifier = 'twitter'
+  name = 'Twitter'
+  url = 'https://twitter.com/jiten_mt'
+  [params.sidebar.social.params]
+    icon = 'brand-twitter'
+
+[[params.sidebar.social]]
+  identifier = 'github'
+  name = 'GitHub'
+  url = 'https://github.com/jiten-thakkar'
+  [params.sidebar.social.params]
+    icon = 'brand-github'
+
+[[params.sidebar.social]]
+  identifier = 'email'
+  name = 'Email'
+  url = 'mailto:jitenmt@gmail.com'
+  [params.sidebar.social.params]
+    icon = 'mail'
+
+# Taxonomies
 [taxonomies]
-  tag = "tags"
-  category = "categories"
+  tag = 'tags'
+  category = 'categories'
 
 # Outputs
 [outputs]
-  home = ["HTML", "RSS", "JSON"]
+  home = ['HTML', 'RSS', 'JSON']
 
-# Enable GitHub-flavored markdown
+# Markup
 [markup]
   [markup.goldmark]
     [markup.goldmark.renderer]
       unsafe = true
+  [markup.tableOfContents]
+    endLevel = 4
+    ordered = true
+    startLevel = 2
   [markup.highlight]
     noClasses = false
+    codeFences = true
+    guessSyntax = true
+    lineNoStart = 1
+    lineNos = true
+    lineNumbersInTable = true
+    tabWidth = 4

@@ -1,0 +1,86 @@
+baseURL = 'https://jiten-thakkar.com/'
+languageCode = 'en-us'
+title = 'Jiten Thakkar'
+theme = 'PaperMod'
+
+# Disqus
+[services]
+  [services.disqus]
+    shortname = 'jitenthakkarcom'
+
+[params]
+  author = 'Jiten Thakkar'
+  description = 'Personal blog of Jiten Thakkar'
+
+  # Social links
+  [[params.socialIcons]]
+    name = "twitter"
+    url = "https://twitter.com/jiten_mt"
+
+  [[params.socialIcons]]
+    name = "github"
+    url = "https://github.com/jiten-thakkar"
+
+  # PaperMod settings
+  ShowReadingTime = true
+  ShowShareButtons = false
+  ShowPostNavLinks = true
+  ShowBreadCrumbs = true
+  ShowCodeCopyButtons = true
+  ShowWordCount = false
+  ShowRssButtonInSectionTermList = true
+  UseHugoToc = true
+  disableSpecial1stPost = false
+  disableScrollToTop = false
+  comments = true
+  hidemeta = false
+  hideSummary = false
+  showtoc = false
+  tocopen = false
+
+  # Home page settings
+  [params.homeInfoParams]
+    Title = "Hi there! I'm Jiten"
+    Content = "Welcome to my blog where I write about technology, programming, and occasional adventures."
+
+  # Cover image settings
+  [params.cover]
+    hidden = false
+    hiddenInList = false
+    hiddenInSingle = false
+
+# Menu
+[[menu.main]]
+  identifier = "about"
+  name = "About"
+  url = "/about/"
+  weight = 10
+
+[[menu.main]]
+  identifier = "archives"
+  name = "Archives"
+  url = "/archives/"
+  weight = 20
+
+[[menu.main]]
+  identifier = "gallery"
+  name = "Gallery"
+  url = "/gallery/"
+  weight = 30
+
+# Enable taxonomies
+[taxonomies]
+  tag = "tags"
+  category = "categories"
+
+# Outputs
+[outputs]
+  home = ["HTML", "RSS", "JSON"]
+
+# Enable GitHub-flavored markdown
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
+  [markup.highlight]
+    noClasses = false
