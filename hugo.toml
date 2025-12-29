@@ -24,12 +24,12 @@ theme = 'hugo-theme-stack'
 
   [params.sidebar]
     emoji = '👋'
-    subtitle = 'Software Engineer at AWS. Obsessed about history.'
+    subtitle = 'Software Engineer at Google working on ML performance. I am also obsessed about history.'
 
     [params.sidebar.avatar]
       enabled = true
       local = false
-      src = ''
+      src = '/images/dp_400x400.jpg'
 
   [params.article]
     math = false
