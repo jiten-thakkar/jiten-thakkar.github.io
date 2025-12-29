@@ -1,5 +1,14 @@
-*.*~
-_site
-*.DS_Store
-*.icloud
-.idea
+# Hugo
+public/
+resources/
+.hugo_build.lock
+
+# macOS
+.DS_Store
+
+# Editor
+.vscode/
+.idea/
+*.swp
+*.swo
+*~

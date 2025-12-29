@@ -1,0 +1,16 @@
+/* Custom styles for Disqus comments */
+.comments-separator {
+  margin: 3rem 0 2rem;
+  border-top: 1px solid var(--border);
+}
+
+#disqus_thread {
+  margin-top: 2rem;
+}
+
+/* Ensure Disqus respects dark mode if theme has it */
+@media (prefers-color-scheme: dark) {
+  #disqus_thread iframe {
+    color-scheme: dark;
+  }
+}
