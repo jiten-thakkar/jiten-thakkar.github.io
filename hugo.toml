@@ -147,7 +147,7 @@ theme = 'hugo-theme-stack'
   [[menu.social]]
     identifier = 'linkedin'
     name = 'LinkedIn'
-    url = 'https://www.linkedin.com/in/jiten-thakkar/'
+    url = 'https://www.linkedin.com/in/jiten2/'
     [menu.social.params]
       icon = 'brand-linkedin'
 
