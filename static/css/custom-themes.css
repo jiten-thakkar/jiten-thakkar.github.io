@@ -539,6 +539,29 @@ figure img {
     width: 100% !important;
 }
 
+/* Limit article content width for better readability */
+.article-page .main-article {
+    max-width: 900px !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+}
+
+.article-content {
+    max-width: 800px !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+}
+
+/* Ensure article header and footer also respect max width */
+.article-page .main-article .article-header .article-details,
+.article-page .main-article .article-footer {
+    max-width: 800px !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+}
+
 /* Force text colors for all themes */
 body, p, span, div, li, td, th, .article-content,
 h1, h2, h3, h4, h5, h6,
