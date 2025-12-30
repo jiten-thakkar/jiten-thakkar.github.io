@@ -1,15 +1,25 @@
 <!-- Ocean Theme as Default (but allow dark mode toggle) -->
 <script>
 (function() {
-    // Set Ocean theme as default only if no preference is saved
+    // Check if user has saved a preference
     const savedScheme = localStorage.getItem('StackColorScheme');
 
-    if (!savedScheme) {
-        // First time visitor - set Ocean theme as default
+    // If no saved preference or if it's 'light', use Ocean theme
+    if (!savedScheme || savedScheme === 'light' || savedScheme === 'auto') {
         document.documentElement.setAttribute('data-scheme', 'ocean');
         localStorage.setItem('StackColorScheme', 'light');
+    } else if (savedScheme === 'dark') {
+        // If user chose dark mode, respect that
+        document.documentElement.setAttribute('data-scheme', 'dark');
     }
-    // If user has toggled dark mode before, respect their choice
+
+    // Apply on page load as well
+    window.addEventListener('DOMContentLoaded', function() {
+        const currentScheme = localStorage.getItem('StackColorScheme');
+        if (currentScheme === 'light' || currentScheme === 'auto' || !currentScheme) {
+            document.documentElement.setAttribute('data-scheme', 'ocean');
+        }
+    });
 })();
 </script>
 

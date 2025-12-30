@@ -593,3 +593,21 @@ a:hover {
 .left-sidebar {
     background: var(--sidebar-background) !important;
 }
+
+/* Make social icons visible with white color */
+.menu-social svg,
+.menu-social a,
+.menu-social a svg {
+    stroke: #ffffff !important;
+    color: #ffffff !important;
+}
+
+.menu-social li {
+    display: inline-block;
+}
+
+.menu-social a:hover svg {
+    stroke: var(--accent-color) !important;
+    transform: scale(1.1);
+    transition: all 0.2s ease;
+}
