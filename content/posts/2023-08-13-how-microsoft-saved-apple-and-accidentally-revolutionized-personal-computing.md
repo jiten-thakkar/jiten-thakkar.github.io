@@ -12,13 +12,13 @@ tags:
 - bill gates
 ---
 
-{{< figure src="/img/steve_jobs_speech.png" alt="**Steve Jobs giving graduation speech at Standford, 2005**" caption="**Steve Jobs giving graduation speech at Standford, 2005**" >}}
+{{< figure src="/img/steve_jobs_speech.png" alt="Steve Jobs giving graduation speech at Standford, 2005" caption="Steve Jobs giving graduation speech at Standford, 2005" >}}
 
 In the tech world, it's common to hear stories of fierce competition and bitter rivalries. One of the most famous of these is the rivalry between Apple and Microsoft. However, there is a lesser-known story about how Microsoft actually helped save Apple from financial ruin.
 
 In 1997, Apple was struggling and had no clear direction. The company had just acquired NeXT computers, which laid the foundation for their future operating system, MacOS. Steve Jobs, who had previously been fired from Apple, returned as the interim CEO and set out to clean up the company. He knew that Apple needed partners and capital injection to survive and avoid laying off talented people.
 
-{{< figure src="/img/billgatesMacworld1997.jpeg" alt="**Bill Gates at MacWorld, 1997**" caption="**Bill Gates at MacWorld, 1997**" >}}
+{{< figure src="/img/billgatesMacworld1997.jpeg" alt="Bill Gates at MacWorld, 1997" caption="Bill Gates at MacWorld, 1997" >}}
 
 At the same time, Microsoft was the undisputed leader in the PC market with over 90% market share. Apple and Microsoft were in patent infringement negotiations[1] that were leading to frustration on both sides. Jobs went to Bill Gates and negotiated a deal where Microsoft would invest $150 million in Apple, guarantee support for Microsoft Office on MacOS for the next 5 years, and drop a patent infringement lawsuit. It led to the famous Apple event where Bill Gates appeared as the towering image above Steve Jobs on the stage, much to everyone's dismay because Microsoft stood for everything that they hated about consumer software.
 
