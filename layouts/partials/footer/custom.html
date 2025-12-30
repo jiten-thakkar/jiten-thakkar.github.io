@@ -284,8 +284,7 @@
 <!-- Remove ** markers from captions -->
 <script>
 (function() {
-    // Wait for DOM to be fully loaded
-    document.addEventListener('DOMContentLoaded', function() {
+    function cleanCaptions() {
         // Find all figcaption elements
         const captions = document.querySelectorAll('figcaption');
 
@@ -293,7 +292,20 @@
             // Remove ** markers from the text content
             caption.innerHTML = caption.innerHTML.replace(/\*\*/g, '');
         });
-    });
+
+        console.log('Cleaned', captions.length, 'captions');
+    }
+
+    // Run immediately if DOM is already loaded
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', cleanCaptions);
+    } else {
+        cleanCaptions();
+    }
+
+    // Also run after a short delay to catch any dynamically loaded content
+    setTimeout(cleanCaptions, 100);
+    setTimeout(cleanCaptions, 500);
 })();
 </script>
 
