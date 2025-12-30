@@ -59,8 +59,8 @@
     --code-color: #be123c;
     --link-color: #0891b2;
     --link-hover-color: #0e7490;
-    --sidebar-background: #164e63;
-    --sidebar-text: #ecfeff;
+    --sidebar-background: #0c4a6e;
+    --sidebar-text: #ffffff;
     --box-shadow: 0 4px 6px -1px rgba(8, 145, 178, 0.1), 0 2px 4px -1px rgba(8, 145, 178, 0.06);
     --box-shadow-lg: 0 10px 15px -3px rgba(8, 145, 178, 0.15), 0 4px 6px -2px rgba(8, 145, 178, 0.08);
 }
@@ -552,4 +552,21 @@ a {
 
 a:hover {
     color: var(--link-hover-color) !important;
+}
+
+/* Force sidebar text to be readable */
+.left-sidebar,
+.left-sidebar *,
+.left-sidebar a,
+.left-sidebar p,
+.left-sidebar span,
+.left-sidebar .site-name,
+.left-sidebar .site-description,
+.left-sidebar nav,
+.left-sidebar nav a {
+    color: var(--sidebar-text) !important;
+}
+
+.left-sidebar {
+    background: var(--sidebar-background) !important;
 }

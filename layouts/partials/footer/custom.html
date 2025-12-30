@@ -285,27 +285,53 @@
 <script>
 (function() {
     function cleanCaptions() {
-        // Find all figcaption elements
-        const captions = document.querySelectorAll('figcaption');
+        // Find all figcaption elements and their children
+        const captions = document.querySelectorAll('figcaption, figcaption *');
 
-        captions.forEach(function(caption) {
-            // Remove ** markers from the text content
-            caption.innerHTML = caption.innerHTML.replace(/\*\*/g, '');
+        captions.forEach(function(element) {
+            // Get all text nodes and clean them
+            const walker = document.createTreeWalker(
+                element,
+                NodeFilter.SHOW_TEXT,
+                null,
+                false
+            );
+
+            const textNodes = [];
+            let node;
+            while (node = walker.nextNode()) {
+                textNodes.push(node);
+            }
+
+            textNodes.forEach(function(textNode) {
+                textNode.textContent = textNode.textContent.replace(/\*\*/g, '');
+            });
+
+            // Also clean innerHTML as fallback
+            if (element.innerHTML) {
+                element.innerHTML = element.innerHTML.replace(/\*\*/g, '');
+            }
         });
 
-        console.log('Cleaned', captions.length, 'captions');
+        console.log('Cleaned captions - found', document.querySelectorAll('figcaption').length, 'figcaption elements');
     }
 
-    // Run immediately if DOM is already loaded
+    // Run immediately
+    cleanCaptions();
+
+    // Run when DOM is loaded
     if (document.readyState === 'loading') {
         document.addEventListener('DOMContentLoaded', cleanCaptions);
-    } else {
-        cleanCaptions();
     }
 
-    // Also run after a short delay to catch any dynamically loaded content
+    // Also run after delays to catch dynamically loaded content
+    setTimeout(cleanCaptions, 50);
     setTimeout(cleanCaptions, 100);
     setTimeout(cleanCaptions, 500);
+    setTimeout(cleanCaptions, 1000);
+
+    // Run on window load as final attempt
+    window.addEventListener('load', cleanCaptions);
 })();
 </script>
 
