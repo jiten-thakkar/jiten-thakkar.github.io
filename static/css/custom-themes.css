@@ -1,0 +1,65 @@
+/* Import existing theme from SCSS */
+@import url('/css/original-custom-themes.css');
+
+/* CRITICAL: Remove bold markdown syntax from captions */
+figcaption strong,
+.article-content figcaption strong,
+figure figcaption strong {
+    font-weight: normal !important;
+}
+
+figcaption::before,
+.article-content figcaption::before {
+    content: none !important;
+}
+
+/* Hide ** markers in captions */
+figcaption,
+.article-content figcaption,
+figure figcaption {
+    display: block !important;
+    text-align: center !important;
+    font-style: italic !important;
+    font-size: 1rem !important;
+    color: var(--card-text-color-secondary) !important;
+    margin-top: 1rem !important;
+    margin-bottom: 1.5rem !important;
+    padding: 0 1rem !important;
+    line-height: 1.6 !important;
+    font-weight: normal !important;
+}
+
+/* ULTRA AGGRESSIVE FONT SIZE - 1.375rem (22px) */
+.article-content,
+.article-content p,
+.article-content div:not(.highlight),
+.article-content span,
+article p,
+article div {
+    font-size: 1.375rem !important;
+    line-height: 2 !important;
+}
+
+.article-content li,
+.article-content ul li,
+.article-content ol li {
+    font-size: 1.375rem !important;
+    line-height: 2 !important;
+    margin-bottom: 0.75em !important;
+}
+
+/* Even more specific selectors */
+.main-container .article-content p,
+.s-content p,
+article .s-content p {
+    font-size: 1.375rem !important;
+    line-height: 2 !important;
+}
+
+/* Responsive images */
+.article-content img,
+figure img {
+    max-width: 100% !important;
+    height: auto !important;
+    width: 100% !important;
+}
