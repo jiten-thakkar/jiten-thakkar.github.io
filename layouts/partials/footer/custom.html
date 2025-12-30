@@ -1,283 +1,28 @@
-<!-- Theme Switcher -->
-<div id="theme-switcher" style="position: fixed; bottom: 20px; right: 20px; z-index: 1000;">
-    <button id="theme-toggle-btn" style="
-        background: var(--accent-color);
-        color: var(--accent-color-text);
-        border: none;
-        border-radius: 50%;
-        width: 56px;
-        height: 56px;
-        font-size: 24px;
-        cursor: pointer;
-        box-shadow: var(--box-shadow-lg);
-        transition: all 0.3s ease;
-    " title="Change Theme">
-        🎨
-    </button>
-
-    <div id="theme-menu" style="
-        display: none;
-        position: absolute;
-        bottom: 70px;
-        right: 0;
-        background: var(--card-background);
-        border-radius: 12px;
-        padding: 16px;
-        box-shadow: var(--box-shadow-lg);
-        min-width: 200px;
-    ">
-        <h4 style="margin: 0 0 12px 0; font-size: 16px; color: var(--body-text-color);">Choose Theme</h4>
-        <div style="display: grid; gap: 8px;">
-            <button class="theme-option" data-theme="auto" style="
-                padding: 10px 16px;
-                border: 2px solid var(--accent-color);
-                background: var(--card-background);
-                color: var(--body-text-color);
-                border-radius: 8px;
-                cursor: pointer;
-                font-size: 14px;
-                font-weight: 500;
-                transition: all 0.2s ease;
-                text-align: left;
-            ">
-                ⚙️ Auto (System)
-            </button>
-            <button class="theme-option" data-theme="light" style="
-                padding: 10px 16px;
-                border: 2px solid transparent;
-                background: var(--card-background);
-                color: var(--body-text-color);
-                border-radius: 8px;
-                cursor: pointer;
-                font-size: 14px;
-                font-weight: 500;
-                transition: all 0.2s ease;
-                text-align: left;
-            ">
-                ☀️ Light Blue
-            </button>
-            <button class="theme-option" data-theme="dark" style="
-                padding: 10px 16px;
-                border: 2px solid transparent;
-                background: var(--card-background);
-                color: var(--body-text-color);
-                border-radius: 8px;
-                cursor: pointer;
-                font-size: 14px;
-                font-weight: 500;
-                transition: all 0.2s ease;
-                text-align: left;
-            ">
-                🌙 Dark
-            </button>
-            <button class="theme-option" data-theme="ocean" style="
-                padding: 10px 16px;
-                border: 2px solid transparent;
-                background: var(--card-background);
-                color: var(--body-text-color);
-                border-radius: 8px;
-                cursor: pointer;
-                font-size: 14px;
-                font-weight: 500;
-                transition: all 0.2s ease;
-                text-align: left;
-            ">
-                🌊 Ocean
-            </button>
-            <button class="theme-option" data-theme="forest" style="
-                padding: 10px 16px;
-                border: 2px solid transparent;
-                background: var(--card-background);
-                color: var(--body-text-color);
-                border-radius: 8px;
-                cursor: pointer;
-                font-size: 14px;
-                font-weight: 500;
-                transition: all 0.2s ease;
-                text-align: left;
-            ">
-                🌲 Forest
-            </button>
-            <button class="theme-option" data-theme="sunset" style="
-                padding: 10px 16px;
-                border: 2px solid transparent;
-                background: var(--card-background);
-                color: var(--body-text-color);
-                border-radius: 8px;
-                cursor: pointer;
-                font-size: 14px;
-                font-weight: 500;
-                transition: all 0.2s ease;
-                text-align: left;
-            ">
-                🌅 Sunset
-            </button>
-            <button class="theme-option" data-theme="royal" style="
-                padding: 10px 16px;
-                border: 2px solid transparent;
-                background: var(--card-background);
-                color: var(--body-text-color);
-                border-radius: 8px;
-                cursor: pointer;
-                font-size: 14px;
-                font-weight: 500;
-                transition: all 0.2s ease;
-                text-align: left;
-            ">
-                👑 Royal
-            </button>
-            <button class="theme-option" data-theme="midnight" style="
-                padding: 10px 16px;
-                border: 2px solid transparent;
-                background: var(--card-background);
-                color: var(--body-text-color);
-                border-radius: 8px;
-                cursor: pointer;
-                font-size: 14px;
-                font-weight: 500;
-                transition: all 0.2s ease;
-                text-align: left;
-            ">
-                🌃 Midnight
-            </button>
-            <button class="theme-option" data-theme="rose" style="
-                padding: 10px 16px;
-                border: 2px solid transparent;
-                background: var(--card-background);
-                color: var(--body-text-color);
-                border-radius: 8px;
-                cursor: pointer;
-                font-size: 14px;
-                font-weight: 500;
-                transition: all 0.2s ease;
-                text-align: left;
-            ">
-                🌹 Rose
-            </button>
-        </div>
-    </div>
-</div>
-
+<!-- Ocean Theme - Auto Apply -->
 <script>
 (function() {
-    const toggleBtn = document.getElementById('theme-toggle-btn');
-    const themeMenu = document.getElementById('theme-menu');
-    const themeOptions = document.querySelectorAll('.theme-option');
+    // Force Ocean theme as default
+    const theme = 'ocean';
 
-    // Disable Stack theme's color scheme management
-    localStorage.removeItem('StackColorScheme');
+    // Apply immediately
+    document.documentElement.setAttribute('data-scheme', theme);
 
-    // Toggle menu
-    toggleBtn.addEventListener('click', function(e) {
-        e.stopPropagation();
-        themeMenu.style.display = themeMenu.style.display === 'none' ? 'block' : 'none';
-    });
+    // Store in localStorage
+    localStorage.setItem('user-color-scheme', theme);
+    localStorage.setItem('StackColorScheme', 'light');
 
-    // Close menu when clicking outside
-    document.addEventListener('click', function(e) {
-        if (!document.getElementById('theme-switcher').contains(e.target)) {
-            themeMenu.style.display = 'none';
-        }
-    });
-
-    // Load saved theme immediately
-    const savedTheme = localStorage.getItem('user-color-scheme') || 'ocean';
-    applyTheme(savedTheme, true);
-
-    // Apply theme again after a short delay to override Stack's theme
-    setTimeout(function() {
-        applyTheme(savedTheme, true);
-        updateActiveButton(savedTheme);
-    }, 100);
-
-    // Theme option click handlers
-    themeOptions.forEach(option => {
-        option.addEventListener('click', function(e) {
-            e.stopPropagation();
-            const theme = this.getAttribute('data-theme');
-            applyTheme(theme, true);
-            localStorage.setItem('user-color-scheme', theme);
-            updateActiveButton(theme);
-            themeMenu.style.display = 'none';
-        });
-
-        // Hover effects
-        option.addEventListener('mouseenter', function() {
-            if (!this.classList.contains('active')) {
-                this.style.borderColor = 'var(--accent-color)';
-                this.style.transform = 'translateX(4px)';
-            }
-        });
-
-        option.addEventListener('mouseleave', function() {
-            if (!this.classList.contains('active')) {
-                this.style.borderColor = 'transparent';
-                this.style.transform = 'translateX(0)';
-            }
-        });
-    });
-
-    function applyTheme(theme, force) {
-        const html = document.documentElement;
-
-        if (theme === 'auto') {
-            // Check system preference
-            if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
-                html.setAttribute('data-scheme', 'dark');
-            } else {
-                html.setAttribute('data-scheme', 'light');
-            }
-        } else {
-            // Directly set the attribute
-            html.setAttribute('data-scheme', theme);
-        }
-
-        // Store in Stack's storage to prevent conflicts
-        localStorage.setItem('StackColorScheme', theme === 'dark' || theme === 'midnight' ? 'dark' : 'light');
-
-        // Debug log
-        console.log('Applied theme:', theme, 'data-scheme:', html.getAttribute('data-scheme'));
-    }
-
-    function updateActiveButton(theme) {
-        themeOptions.forEach(option => {
-            if (option.getAttribute('data-theme') === theme) {
-                option.classList.add('active');
-                option.style.borderColor = 'var(--accent-color)';
-                option.style.background = 'var(--tag-background)';
-            } else {
-                option.classList.remove('active');
-                option.style.borderColor = 'transparent';
-                option.style.background = 'var(--card-background)';
-            }
-        });
-    }
-
-    // Prevent Stack theme from overriding on page load
+    // Apply on page load
     window.addEventListener('load', function() {
-        const savedTheme = localStorage.getItem('user-color-scheme');
-        if (savedTheme) {
-            applyTheme(savedTheme, true);
-        }
+        document.documentElement.setAttribute('data-scheme', theme);
     });
 
-    // Re-apply theme periodically to prevent Stack from overriding
+    // Re-apply periodically to prevent Stack from overriding
     setInterval(function() {
-        const savedTheme = localStorage.getItem('user-color-scheme');
         const currentScheme = document.documentElement.getAttribute('data-scheme');
-        if (savedTheme && savedTheme !== 'auto' && savedTheme !== currentScheme) {
-            applyTheme(savedTheme, false);
+        if (currentScheme !== theme) {
+            document.documentElement.setAttribute('data-scheme', theme);
         }
     }, 500);
-
-    // Hover effect for toggle button
-    toggleBtn.addEventListener('mouseenter', function() {
-        this.style.transform = 'scale(1.1) rotate(15deg)';
-    });
-
-    toggleBtn.addEventListener('mouseleave', function() {
-        this.style.transform = 'scale(1) rotate(0deg)';
-    });
 })();
 </script>
 
@@ -334,13 +79,3 @@
     window.addEventListener('load', cleanCaptions);
 })();
 </script>
-
-<style>
-#theme-toggle-btn:active {
-    transform: scale(0.95) !important;
-}
-
-.theme-option:active {
-    transform: scale(0.98) !important;
-}
-</style>
