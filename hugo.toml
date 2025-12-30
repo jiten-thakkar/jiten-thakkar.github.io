@@ -100,7 +100,7 @@ theme = 'hugo-theme-stack'
     [menu.main.params]
       icon = 'user'
       newTab = false
-    weight = 10
+    weight = 1
 
   [[menu.main]]
     identifier = 'home'
@@ -109,7 +109,7 @@ theme = 'hugo-theme-stack'
     [menu.main.params]
       icon = 'home'
       newTab = false
-    weight = 20
+    weight = 2
 
   [[menu.main]]
     identifier = 'archives'
@@ -118,7 +118,7 @@ theme = 'hugo-theme-stack'
     [menu.main.params]
       icon = 'archives'
       newTab = false
-    weight = 30
+    weight = 3
 
   [[menu.main]]
     identifier = 'gallery'
@@ -127,7 +127,7 @@ theme = 'hugo-theme-stack'
     [menu.main.params]
       icon = 'link'
       newTab = false
-    weight = 40
+    weight = 4
 
   # Social links in sidebar
   [[menu.social]]
