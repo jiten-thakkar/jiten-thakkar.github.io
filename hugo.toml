@@ -144,6 +144,13 @@ theme = 'hugo-theme-stack'
     [menu.social.params]
       icon = 'brand-github'
 
+  [[menu.social]]
+    identifier = 'linkedin'
+    name = 'LinkedIn'
+    url = 'https://www.linkedin.com/in/jiten-thakkar/'
+    [menu.social.params]
+      icon = 'brand-linkedin'
+
 # Taxonomies
 [taxonomies]
   tag = 'tags'
