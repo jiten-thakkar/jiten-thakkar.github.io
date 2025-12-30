@@ -1,15 +1,17 @@
-<!-- Ocean Theme as Default (but allow dark mode toggle) -->
+<!-- Dark Theme as Default (but allow light mode toggle) -->
 <script>
 (function() {
     // Function to apply the correct theme
     function applyCorrectTheme() {
         const savedScheme = localStorage.getItem('StackColorScheme');
 
-        if (savedScheme === 'dark') {
-            document.documentElement.setAttribute('data-scheme', 'dark');
-        } else {
-            // For 'light', 'auto', or no preference - use Ocean
+        if (savedScheme === 'light') {
+            // If user toggled to light, use Ocean theme
             document.documentElement.setAttribute('data-scheme', 'ocean');
+        } else {
+            // Default to dark theme
+            document.documentElement.setAttribute('data-scheme', 'dark');
+            localStorage.setItem('StackColorScheme', 'dark');
         }
     }
 
