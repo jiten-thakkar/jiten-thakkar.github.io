@@ -1,25 +1,45 @@
 <!-- Ocean Theme as Default (but allow dark mode toggle) -->
 <script>
 (function() {
-    // Check if user has saved a preference
-    const savedScheme = localStorage.getItem('StackColorScheme');
+    // Function to apply the correct theme
+    function applyCorrectTheme() {
+        const savedScheme = localStorage.getItem('StackColorScheme');
 
-    // If no saved preference or if it's 'light', use Ocean theme
-    if (!savedScheme || savedScheme === 'light' || savedScheme === 'auto') {
-        document.documentElement.setAttribute('data-scheme', 'ocean');
-        localStorage.setItem('StackColorScheme', 'light');
-    } else if (savedScheme === 'dark') {
-        // If user chose dark mode, respect that
-        document.documentElement.setAttribute('data-scheme', 'dark');
-    }
-
-    // Apply on page load as well
-    window.addEventListener('DOMContentLoaded', function() {
-        const currentScheme = localStorage.getItem('StackColorScheme');
-        if (currentScheme === 'light' || currentScheme === 'auto' || !currentScheme) {
+        if (savedScheme === 'dark') {
+            document.documentElement.setAttribute('data-scheme', 'dark');
+        } else {
+            // For 'light', 'auto', or no preference - use Ocean
             document.documentElement.setAttribute('data-scheme', 'ocean');
         }
+    }
+
+    // Apply theme immediately
+    applyCorrectTheme();
+
+    // Watch for changes to data-scheme attribute (when user clicks toggle)
+    const observer = new MutationObserver(function(mutations) {
+        mutations.forEach(function(mutation) {
+            if (mutation.type === 'attributes' && mutation.attributeName === 'data-scheme') {
+                const currentScheme = document.documentElement.getAttribute('data-scheme');
+                const savedScheme = localStorage.getItem('StackColorScheme');
+
+                // If Stack theme set it to 'light', change it to 'ocean'
+                if (currentScheme === 'light' && savedScheme === 'light') {
+                    document.documentElement.setAttribute('data-scheme', 'ocean');
+                }
+            }
+        });
     });
+
+    // Start observing
+    observer.observe(document.documentElement, {
+        attributes: true,
+        attributeFilter: ['data-scheme']
+    });
+
+    // Also apply on page load
+    window.addEventListener('DOMContentLoaded', applyCorrectTheme);
+    window.addEventListener('load', applyCorrectTheme);
 })();
 </script>
 
